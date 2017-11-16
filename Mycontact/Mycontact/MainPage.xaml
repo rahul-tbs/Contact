@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Mycontact"
+             x:Class="Mycontact.MainPage">
+  <StackLayout Orientation="Vertical">
+  <Button Text="Welcome to Xamarin Forms!"
+           VerticalOptions="Center"
+            Clicked="Button_OnClicked"
+           HorizontalOptions="Center" />
+    <ListView x:Name="ListViewContact" BackgroundColor="Aqua"  VerticalOptions="FillAndExpand" RowHeight="60" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="5,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45" />
+                            <ColumnDefinition Width="9*" />
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding imagesource}" Aspect="AspectFill" Grid.Column="0" HeightRequest="10">
+                        </Image>
+                        <!--<Image Source="{Binding imagesource}" Grid.Column="0" HeightRequest="10"></Image>-->
+                        <StackLayout Grid.Column="1" Orientation="Vertical" Padding="5,0,0,0" VerticalOptions="CenterAndExpand">
+                            <Label Text="{Binding DisplayName}" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding PhoneNumber}" HorizontalOptions="StartAndExpand" />
+                        </StackLayout>
+                        <!--<Image Grid.Column="2" Source="{Binding image}" Margin="0,0,10,0"></Image>-->
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

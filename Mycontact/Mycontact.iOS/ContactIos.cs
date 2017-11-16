@@ -42,7 +42,7 @@ namespace Mycontact.iOS
                     }
                     else
                     {
-                        myMobileUserContact.imagesource = "icon.png";
+                        myMobileUserContact.imagesource = "avatar.png";
                     }
                     myMobileUserContact.DisplayName = contact.DisplayName;
                     myMobileUserContact.PhoneNumber = phone != null ? phone.Number : string.Empty;

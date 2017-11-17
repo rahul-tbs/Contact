@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using Android.Content;
 using Android.Graphics;
 using Mycontact.Droid;
+using Android.Provider;
+using static Android.Provider.ContactsContract;
+using Android.Database;
+using Uri = Android.Net.Uri;
 
 [assembly: Dependency(typeof(ContactDroid))]
 namespace Mycontact.Droid
@@ -65,5 +69,37 @@ namespace Mycontact.Droid
             
             return _contacts;
         }
+        public void Editcontact ()
+        {
+            try
+            {
+                Context thisContext = Android.App.Application.Context;
+                //Intent intent = new Intent(Intent.ActionView, ContactsContract.Contacts.ContentUri);
+                //thisContext.StartActivity(intent);
+
+                string[] Projection = new string[] { ContactsContract.ContactsColumns.LookupKey, ContactsColumns.DisplayName };
+
+                ICursor cursor = thisContext.ContentResolver.Query(ContactsContract.Contacts.ContentUri, Projection, null, null, null);
+
+                while (cursor != null & cursor.MoveToNext())
+                {
+                    string lookupKey = cursor.GetString(0);
+                    string name = cursor.GetString(1);
+                    MainActivity main = new MainActivity();
+                    Intent intent = new Intent(Intent.ActionView);
+                    Uri uri = Uri.WithAppendedPath(ContactsContract.Contacts.ContentUri, name);
+                    intent.SetData(uri);
+                    main.StartActivity(intent);
+                    //thisContext.StartActivity(intent);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
     }
 }

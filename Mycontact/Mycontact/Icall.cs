@@ -9,5 +9,7 @@ namespace Mycontact
     public interface Icall
     {
         Task<List<MobileUserContact>> GetAllContact();
+
+        void Editcontact();
     }
 }

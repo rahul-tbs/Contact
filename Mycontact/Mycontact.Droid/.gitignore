@@ -22,7 +22,6 @@ bld/
 [Bb]in/
 [Oo]bj/
 Components/
-packages/
 
 # Visual Studio 2015 cache/options directory
 .vs/

@@ -12,7 +12,8 @@ namespace Mycontact
         public async Task<List<MobileUserContact>> Fetchdata()
         {
           var result = await DependencyService.Get<Icall>().GetAllContact();
-            return result;
+
+          return result;
         }
     }
 }

@@ -16,9 +16,9 @@ namespace Mycontact
             ListViewContact.ItemsSource = Task.Run((async () => await contact.Fetchdata())).Result;
         }
 
-        private async void Button_OnClicked(object sender, EventArgs e)
+        private void Button_OnClicked(object sender, EventArgs e)
         {
-           
+            DependencyService.Get<Icall>().Editcontact();
         }
     }
 }

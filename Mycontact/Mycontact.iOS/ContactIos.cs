@@ -61,5 +61,10 @@ namespace Mycontact.iOS
 
             return _contacts;
         }
+
+        public void Editcontact()
+        {
+           
+        }
     }
 }

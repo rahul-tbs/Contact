@@ -14,7 +14,7 @@ namespace Mycontact.Droid
 {
    public class ContactDroid : Icall
     {
-        private readonly Xamarin.Contacts.AddressBook _book;
+        public readonly Xamarin.Contacts.AddressBook _book;
         public static List<MobileUserContact> _contacts = new List<MobileUserContact>();
 
         public ContactDroid()

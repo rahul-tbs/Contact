@@ -11,8 +11,8 @@ namespace Mycontact.iOS
 {
    public class ContactIos : Icall
     {
-        private readonly Xamarin.Contacts.AddressBook _book;
-        private static List<MobileUserContact> _contacts = new List<MobileUserContact>();
+        public readonly Xamarin.Contacts.AddressBook _book;
+        public static List<MobileUserContact> _contacts = new List<MobileUserContact>();
         public ContactIos()
         {
             _book = new Xamarin.Contacts.AddressBook();

@@ -12,12 +12,13 @@ namespace Mycontact
         public MainPage()
         {
             InitializeComponent();
+            ContactData contact = new ContactData();
+            ListViewContact.ItemsSource = Task.Run((async () => await contact.Fetchdata())).Result;
         }
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
-            var result = await DependencyService.Get<Icall>().GetAllContact();
-            ListViewContact.ItemsSource = result;
+           
         }
     }
 }

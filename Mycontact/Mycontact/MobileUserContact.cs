@@ -11,26 +11,13 @@ namespace Mycontact
 {
    public class MobileUserContact
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public string DisplayName { get; set; }
         public ImageSource imagesource { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        private ImageSource AttachmentImageSourceage { get; set; }
-        public ImageSource image
-        {
-            get { return AttachmentImageSourceage; }
-            set
-            {
-                AttachmentImageSourceage = value;
-                NotifyPropertyChanged();
-            }
-        }
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
+        public bool ImageCheck { get; set; }
+        
     }
 }
 

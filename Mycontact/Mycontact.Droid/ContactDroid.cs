@@ -47,10 +47,12 @@ namespace Mycontact.Droid
                         image.Compress(Bitmap.CompressFormat.Png, 0, stream);
                         byte[] imageData = stream.ToArray();
                         myMobileUserContact.imagesource  = ImageSource.FromStream(() => new MemoryStream(imageData));
+                        myMobileUserContact.ImageCheck = false;
                     }
                     else
                     {
                         myMobileUserContact.imagesource = "avatar.png";
+                        myMobileUserContact.ImageCheck = true;
                     }
                     myMobileUserContact.DisplayName = contact.DisplayName;
                     myMobileUserContact.PhoneNumber = phone != null ? phone.Number : string.Empty;

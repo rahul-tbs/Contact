@@ -9,11 +9,13 @@ namespace Mycontact
 {
     public partial class App : Application
     {
+        public static bool Isfirst { get; set; }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new Mycontact.MainPage();
+            App.Isfirst = true;
+            MainPage = new NavigationPage((new Mycontact.MainPage()));
         }
 
         protected override void OnStart()
